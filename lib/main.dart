@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'Widgets/FormCard.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Widgets/MainInfo.dart';
+import 'Widgets/AbilityInfo.dart';
+import 'Widgets/MainDescription.dart';
 import 'Widgets/SocialIcon.dart';
 import 'CustomIcons.dart';
 
@@ -45,7 +47,7 @@ Widget radioButton(bool isSelected) => Container(
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
+    ScreenUtil.instance = ScreenUtil(width: 750, allowFontScaling: true);
     return new Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomPadding: true,
@@ -69,7 +71,7 @@ Widget radioButton(bool isSelected) => Container(
             child: Column(
               children: <Widget>[
                 Container(
-                  height: ScreenUtil.getInstance().setHeight(440),
+                  height: ScreenUtil.getInstance().setHeight(640),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -88,7 +90,7 @@ Widget radioButton(bool isSelected) => Container(
                   ),
                   child: Container(
                     child: Padding(
-                      padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 85),
+                      padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 70),
                       child: Column(
                         children: <Widget>[
                           Row(
@@ -106,7 +108,7 @@ Widget radioButton(bool isSelected) => Container(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(top: 10),
+                              padding: EdgeInsets.only(top: 10, bottom: 5),
                               child: Column(
                                 children: <Widget>[
                                   Text("Web Designer Specialist",
@@ -120,21 +122,41 @@ Widget radioButton(bool isSelected) => Container(
                               ),
                             ),
                           ],),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.only(right: 10),
+                                child: Icon(
+                                  FontAwesomeIcons.mapMarked,
+                                  color: Colors.black38,
+                                  size: 18,
+                                ),
+                              ),
+                              Text("West Java, Indonesia",
+                                style: TextStyle(
+                                  color: Colors.black38,
+                                  fontFamily: "Montserrat",
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12.0 ))
+                            ],
+                          )
                         ],
                       ),
                     ),
                   ),
                 ),
                 Container(
-                  transform: Matrix4.translationValues(0.0, -50.0, 0.0),
+                  transform: Matrix4.translationValues(0.0, -62.0, 0.0),
                   child: Padding(
                     padding: EdgeInsets.only(left: 28.0, right: 28.0),
                     child: Column(
                       children: <Widget>[
                         Container(
+                          padding: EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius: BorderRadius.circular(62),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black12,
@@ -149,19 +171,20 @@ Widget radioButton(bool isSelected) => Container(
                           child: CircleAvatar(
                             backgroundImage: NetworkImage("https://lh3.googleusercontent.com/a-/AAuE7mDmYc3FVCoNC-k9stczAlhqG9gZ70fUaGh7u7l9lA=s192-cc"),
                             backgroundColor: Colors.orangeAccent,
-                            radius: 50,
+                            radius: 60,
                             child: Text("", style: TextStyle(fontSize: 40, fontFamily: "Montserrat" )),
                             foregroundColor: Colors.white,
                           ),
                         ),
                         SizedBox(
-                          height: ScreenUtil.getInstance().setHeight(40),
+                          height: 25,
                         ),
                         MainInfo(),
+                        MainDescription(),
                         SizedBox(
-                          height: ScreenUtil.getInstance().setHeight(40),
+                          height: 6,
                         ),
-                        FormCard(),
+                        AbilityInfo(),
                         SizedBox(
                           height: ScreenUtil.getInstance().setHeight(40),
                         ),
@@ -188,7 +211,7 @@ Widget radioButton(bool isSelected) => Container(
                             InkWell(
                               child: Container(
                                 width: ScreenUtil.getInstance().setWidth(250),
-                                height: ScreenUtil.getInstance().setHeight(70),
+                                height: ScreenUtil.getInstance().setHeight(100),
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
@@ -290,6 +313,14 @@ Widget radioButton(bool isSelected) => Container(
                                 Color(0xFF005bea),
                               ],
                               iconData: CustomIcons.linkedin,
+                              onPressed: () {},
+                            ),
+                            SocialIcon(
+                              colors: [
+                                Color(0xFFBD1B69),
+                                Color(0xFFC74981),
+                              ],
+                              iconData: CustomIcons.dribbble,
                               onPressed: () {},
                             ),
                           ],

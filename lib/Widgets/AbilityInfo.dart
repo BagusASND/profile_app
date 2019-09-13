@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MainInfo extends StatelessWidget {
+class AbilityInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
       width: double.infinity,
       // height: ScreenUtil.getInstance().setHeight(100),
       decoration: BoxDecoration(
-        color: Color(0xFFF2CA64),
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(15.0), topRight: Radius.circular(15.0))),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8.0),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFFDDDDDD),
+            offset: Offset(0.0, 5.0),
+            blurRadius: 10.0),
+        ]),
         child: Padding(
-          padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0, bottom: 35.0),
+          padding: EdgeInsets.all(16.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Container(
                 width: 100,

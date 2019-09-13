@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'Widgets/FormCard.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'Widgets/MainInfo.dart';
+import 'Widgets/AbilityInfo.dart';
+import 'Widgets/MainDescription.dart';
+import 'Widgets/SocialIcon.dart';
+import 'CustomIcons.dart';
 
 void main() => runApp(MaterialApp(
   home: MyApp(),
@@ -42,7 +47,7 @@ Widget radioButton(bool isSelected) => Container(
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
+    ScreenUtil.instance = ScreenUtil(width: 750, allowFontScaling: true);
     return new Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomPadding: true,
@@ -52,25 +57,6 @@ Widget radioButton(bool isSelected) => Container(
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                height: ScreenUtil.getInstance().setHeight(400),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFFF54A65),
-                      Color(0xFFF48160)
-                    ] 
-                  ),
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(50), bottomLeft: Radius.circular(50)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFFF48160).withOpacity(.3),
-                      offset: Offset(0.0, 8.0),
-                      blurRadius: 8.0
-                    )
-                  ]
-                ),
-              ),
               // Padding(
               //   padding: EdgeInsets.only(top: 30.0),
               //   child: Image.asset("asset/app_01.png"),
@@ -82,159 +68,292 @@ Widget radioButton(bool isSelected) => Container(
             ],
           ),
           SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 60.0),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Column(                        
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Row(children: <Widget>[
-                                  Text("Bagus Arisandi",
-                                  style: TextStyle(
-                                  fontSize: ScreenUtil.getInstance().setSp(40),
-                                  fontFamily: "Montserrat",
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w300 ))
-                                ],),
-                                Row(children: <Widget>[
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      children: <Widget>[
-                                        Text("Hi There,",
-                                        style: TextStyle(
-                                        fontSize: ScreenUtil.getInstance().setSp(24),
-                                        fontFamily: "Montserrat",
-                                        color: Color(0xFFDDDDDD),
-                                        letterSpacing: .6,
-                                        fontWeight: FontWeight.w500 ))
-                                      ],
-                                    ),
-                                  ),
-                                ],)
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: ScreenUtil.getInstance().setHeight(640),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFFF54A65),
+                        Color(0xFFF48160)
+                      ] 
+                    ),
+                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(50), bottomLeft: Radius.circular(50)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xFFF48160).withOpacity(.3),
+                        offset: Offset(0.0, 8.0),
+                        blurRadius: 8.0
+                      )
+                    ]
                   ),
-                  // Row(
-                  //   children: <Widget>[
-                  //     Image.asset(
-                  //       "asset/logo.png",
-                  //       width: ScreenUtil.getInstance().setWidth(110),
-                  //       height: ScreenUtil.getInstance().setHeight(110),
-                  //     ),
-                  //     Column(                        
-                  //       children: <Widget>[
-                  //         Padding(
-                  //           padding: EdgeInsets.only(left: 10),
-                  //           child: Column(
-                  //             crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: <Widget>[
-                  //               Row(children: <Widget>[
-                  //                 Text("Hi There,",
-                  //                   style: TextStyle(
-                  //                   fontSize: ScreenUtil.getInstance().setSp(28),
-                  //                   fontFamily: "Montserrat",
-                  //                   color: Colors.white,
-                  //                   letterSpacing: .6,
-                  //                   fontWeight: FontWeight.bold ))
-                  //               ],),
-                  //               Row(children: <Widget>[
-                  //                 Text("Bagus here!",
-                  //                 style: TextStyle(
-                  //                 fontSize: ScreenUtil.getInstance().setSp(46),
-                  //                 fontFamily: "Montserrat",
-                  //                 color: Colors.white,
-                  //                 fontWeight: FontWeight.w500 ))
-                  //               ],)
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ],
-                  // ),
-                  SizedBox(
-                    height: ScreenUtil.getInstance().setHeight(180),
-                  ),
-                  FormCard(),
-                  SizedBox(height: ScreenUtil.getInstance().setHeight(40)),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 70),
+                      child: Column(
                         children: <Widget>[
-                          SizedBox(
-                            width: 12.0,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text("Bagus Arisandi",
+                                style: TextStyle(
+                                fontSize: ScreenUtil.getInstance().setSp(40),
+                                fontFamily: "Montserrat",
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300 ))
+                            ],
                           ),
-                          GestureDetector(
-                            onTap: _radio,
-                            child: radioButton(_isSelected),
-                          ),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Text("Remember me",
-                            style: TextStyle(
-                              fontSize: 12, fontFamily: "Montserrat"))
-                        ],
-                      ),
-                      InkWell(
-                        child: Container(
-                          width: ScreenUtil.getInstance().setWidth(250),
-                          height: ScreenUtil.getInstance().setHeight(70),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                Color(0xFF17ead9),
-                                Color(0xFF6078ea)
-                              ] 
-                            ),
-                            borderRadius: BorderRadius.circular(6.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color(0xFF6078ea).withOpacity(.3),
-                                offset: Offset(0.0, 8.0),
-                                blurRadius: 8.0
-                              )
-                            ]
-                          ),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              onTap: () {},
-                              child: Center(
-                                child: Text("SIGNIN",
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(top: 10, bottom: 5),
+                              child: Column(
+                                children: <Widget>[
+                                  Text("Web Designer Specialist",
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    fontSize: ScreenUtil.getInstance().setSp(24),
                                     fontFamily: "Montserrat",
-                                    fontSize: 16,
-                                    letterSpacing: 1.0)),
+                                    color: Color(0xFFDDDDDD),
+                                    letterSpacing: .6,
+                                    fontWeight: FontWeight.w500 ))
+                                ],
                               ),
                             ),
+                          ],),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.only(right: 10),
+                                child: Icon(
+                                  FontAwesomeIcons.mapMarked,
+                                  color: Colors.black38,
+                                  size: 18,
+                                ),
+                              ),
+                              Text("West Java, Indonesia",
+                                style: TextStyle(
+                                  color: Colors.black38,
+                                  fontFamily: "Montserrat",
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12.0 ))
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  transform: Matrix4.translationValues(0.0, -62.0, 0.0),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 28.0, right: 28.0),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(62),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black12,
+                                offset: Offset(0.0, 15.0),
+                                blurRadius: 15.0),
+                              BoxShadow(
+                                color: Colors.black12,
+                                offset: Offset(0.0, -10.0),
+                                blurRadius: 10.0),
+                            ]
+                          ),
+                          child: CircleAvatar(
+                            backgroundImage: NetworkImage("https://lh3.googleusercontent.com/a-/AAuE7mDmYc3FVCoNC-k9stczAlhqG9gZ70fUaGh7u7l9lA=s192-cc"),
+                            backgroundColor: Colors.orangeAccent,
+                            radius: 60,
+                            child: Text("", style: TextStyle(fontSize: 40, fontFamily: "Montserrat" )),
+                            foregroundColor: Colors.white,
                           ),
                         ),
-                      )
-                    ],
+                        SizedBox(
+                          height: 25,
+                        ),
+                        MainDescription(),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        MainInfo(),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        AbilityInfo(),
+                        SizedBox(
+                          height: ScreenUtil.getInstance().setHeight(40),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 12.0,
+                                ),
+                                GestureDetector(
+                                  onTap: _radio,
+                                  child: radioButton(_isSelected),
+                                ),
+                                SizedBox(
+                                  width: 8.0,
+                                ),
+                                Text("Remember me",
+                                  style: TextStyle(
+                                    fontSize: 12, fontFamily: "Montserrat"))
+                              ],
+                            ),
+                            InkWell(
+                              child: Container(
+                                width: ScreenUtil.getInstance().setWidth(250),
+                                height: ScreenUtil.getInstance().setHeight(100),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFF17ead9),
+                                      Color(0xFF6078ea)
+                                    ] 
+                                  ),
+                                  borderRadius: BorderRadius.circular(6.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xFF6078ea).withOpacity(.3),
+                                      offset: Offset(0.0, 8.0),
+                                      blurRadius: 8.0
+                                    )
+                                  ]
+                                ),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Center(
+                                      child: Text("SIGNIN",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: "Montserrat",
+                                          fontSize: 16,
+                                          letterSpacing: 1.0)),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: ScreenUtil.getInstance().setHeight(40),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Expanded(
+                              child: new Container(
+                                margin: const EdgeInsets.only(right: 20.0),
+                                child: Divider(
+                                  color: Colors.black26,
+                                  height: 36,
+                                ),
+                              ),
+                            ),
+                            Text("Find me on",
+                              style: TextStyle(
+                                fontSize: 14.0, fontFamily: "Montserrat", color: Colors.black54, fontWeight: FontWeight.w600 )),
+                            Expanded(
+                              child: new Container(
+                                margin: const EdgeInsets.only(left: 20.0),
+                                child: Divider(
+                                  color: Colors.black26,
+                                  height: 36,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: ScreenUtil.getInstance().setHeight(40),
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            SocialIcon(
+                              colors: [
+                                Color(0xFF102397),
+                                Color(0xFF187adf),
+                                Color(0xFF00eaf8),
+                              ],
+                              iconData: CustomIcons.facebook,
+                              onPressed: () {},
+                            ),
+                            SocialIcon(
+                              colors: [
+                                Color(0xFFff4f38),
+                                Color(0xFFff355d),
+                              ],
+                              iconData: CustomIcons.googlePlus,
+                              onPressed: () {},
+                            ),
+                            SocialIcon(
+                              colors: [
+                                Color(0xFFffa600),
+                                Color(0xFF9601ce),
+                              ],
+                              iconData: CustomIcons.instagram,
+                              onPressed: () {},
+                            ),
+                            SocialIcon(
+                              colors: [
+                                Color(0xFF00c6fb),
+                                Color(0xFF005bea),
+                              ],
+                              iconData: CustomIcons.linkedin,
+                              onPressed: () {},
+                            ),
+                            SocialIcon(
+                              colors: [
+                                Color(0xFFBD1B69),
+                                Color(0xFFC74981),
+                              ],
+                              iconData: CustomIcons.dribbble,
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: ScreenUtil.getInstance().setHeight(40),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text("New User?",
+                              style: TextStyle(
+                                fontFamily: "Montserrat",
+                                fontWeight: FontWeight.w400 )),
+                            InkWell(
+                              onTap: (){},
+                              child: Text(
+                                "SignUp",
+                                  style: TextStyle(
+                                    color: Color(0xFF5d74e3),
+                                    fontFamily: "Montserrat",
+                                    fontWeight: FontWeight.w500 )),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    height: ScreenUtil.getInstance().setHeight(40),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                  )
-                ],
-              ),
+                ),
+              ],
             ),
           )
         ],

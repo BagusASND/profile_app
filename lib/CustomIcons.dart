@@ -6,4 +6,5 @@ class CustomIcons{
   static const IconData facebook = FontAwesomeIcons.facebookF;
   static const IconData googlePlus = FontAwesomeIcons.googlePlusG;
   static const IconData linkedin = FontAwesomeIcons.linkedinIn;
+  static const IconData dribbble = FontAwesomeIcons.dribbble;
 }
