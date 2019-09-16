@@ -71,7 +71,7 @@ Widget radioButton(bool isSelected) => Container(
             child: Column(
               children: <Widget>[
                 Container(
-                  height: ScreenUtil.getInstance().setHeight(640),
+                  height: 240,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
