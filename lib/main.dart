@@ -186,68 +186,7 @@ Widget radioButton(bool isSelected) => Container(
                         ),
                         AbilityInfo(),
                         SizedBox(
-                          height: ScreenUtil.getInstance().setHeight(40),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 12.0,
-                                ),
-                                GestureDetector(
-                                  onTap: _radio,
-                                  child: radioButton(_isSelected),
-                                ),
-                                SizedBox(
-                                  width: 8.0,
-                                ),
-                                Text("Remember me",
-                                  style: TextStyle(
-                                    fontSize: 12, fontFamily: "Montserrat"))
-                              ],
-                            ),
-                            InkWell(
-                              child: Container(
-                                width: ScreenUtil.getInstance().setWidth(250),
-                                height: ScreenUtil.getInstance().setHeight(100),
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      Color(0xFF17ead9),
-                                      Color(0xFF6078ea)
-                                    ] 
-                                  ),
-                                  borderRadius: BorderRadius.circular(6.0),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xFF6078ea).withOpacity(.3),
-                                      offset: Offset(0.0, 8.0),
-                                      blurRadius: 8.0
-                                    )
-                                  ]
-                                ),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    onTap: () {},
-                                    child: Center(
-                                      child: Text("SIGNIN",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontFamily: "Montserrat",
-                                          fontSize: 16,
-                                          letterSpacing: 1.0)),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: ScreenUtil.getInstance().setHeight(40),
+                          height: ScreenUtil.getInstance().setHeight(80),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -327,24 +266,6 @@ Widget radioButton(bool isSelected) => Container(
                         ),
                         SizedBox(
                           height: ScreenUtil.getInstance().setHeight(40),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text("New User?",
-                              style: TextStyle(
-                                fontFamily: "Montserrat",
-                                fontWeight: FontWeight.w400 )),
-                            InkWell(
-                              onTap: (){},
-                              child: Text(
-                                "SignUp",
-                                  style: TextStyle(
-                                    color: Color(0xFF5d74e3),
-                                    fontFamily: "Montserrat",
-                                    fontWeight: FontWeight.w500 )),
-                            )
-                          ],
                         ),
                       ],
                     ),
